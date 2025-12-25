@@ -1,3 +1,4 @@
+using Presentation.Extensions;
 using Scalar.AspNetCore;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
@@ -15,7 +16,10 @@ WebApplication webApplication = builder.Build();
 if (webApplication.Environment.IsDevelopment())
 {
     webApplication.MapOpenApi();
-    webApplication.MapScalarApiReference();
+    webApplication.MapScalarApiReference("/docs", options =>
+    {
+        options.WithTitle("My API Documentation");
+    });
 }
 
 webApplication.UseHttpsRedirection();
