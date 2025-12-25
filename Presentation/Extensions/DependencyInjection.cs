@@ -9,7 +9,7 @@ namespace Presentation.Extensions
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddCleanArchitectureServices(
+        public static IServiceCollection InjectServices(
             this IServiceCollection services,
             IConfiguration configuration)
         {
