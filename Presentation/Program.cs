@@ -2,6 +2,8 @@ using Scalar.AspNetCore;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
+builder.Services.InjectServices(builder.Configuration);
+
 builder.Services.AddControllers();
 
 builder.Services.AddHttpClient();
